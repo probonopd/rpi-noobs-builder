@@ -1,8 +1,9 @@
-sudo: false
+sudo: true
 language: c
 compiler: gcc
 
 install:
+- sudo apt-get -qq install bc
 - git clone https://github.com/raspberrypi/noobs.git
 script:
 - cd noobs/

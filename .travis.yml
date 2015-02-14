@@ -1,22 +1,10 @@
-sudo: false
+sudo: true
 language: c
 compiler: gcc
 
-cache:
-  bundler: true
-  directories:
-  - $TRAVIS_BUILD_DIR
-  
-install:
-- mkdir -p $TRAVIS_BUILD_DIR/local ; cd $TRAVIS_BUILD_DIR/local
-- wget "http://de.archive.ubuntu.com/ubuntu/pool/main/b/bc/bc_1.06.95-2ubuntu1_amd64.deb"
-- dpkg -x *.deb .
-- git clone https://github.com/raspberrypi/noobs.git
 script:
-- export PATH=$TRAVIS_BUILD_DIR/local/usr/bin:$PATH
-- cd noobs/
-- sed -i -e 's|make|make -s|g' ./BUILDME.sh
-- ./BUILDME.sh
+- ./build-kiosk.sh
+
 deploy:
   provider: releases
   api_key:

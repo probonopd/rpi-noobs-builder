@@ -3,7 +3,7 @@ language: c
 compiler: gcc
 
 script:
-- ./build-kiosk.sh
+- bash ./build-kiosk.sh
 
 deploy:
   provider: releases

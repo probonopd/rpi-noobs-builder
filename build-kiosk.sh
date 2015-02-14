@@ -24,5 +24,4 @@ cat ../recovery.rfs | lzop -d | sudo cpio -idv # Needs root here
 # /usr/bin/arora -qws 2>/tmp/debug-qws
 
 # Package rootfs
-sudo chown -R root:root .
-find . | cpio -o -H newc | lzop -9 > ../recovery.rfs
+find . | sudo cpio -o -H newc | lzop -9 > ../recovery.rfs

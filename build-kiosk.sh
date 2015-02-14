@@ -13,7 +13,7 @@ wget http://downloads.raspberrypi.org/NOOBS_lite_latest -O NOOBS_lite_latest.zip
 unzip NOOBS_lite_latest.zip
 
 # "Install" lzop
-sudo apt-get install lzop
+sudo apt-get -qq install lzop
 
 # Extract rootfs
 mkdir rootfs

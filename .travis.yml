@@ -8,10 +8,10 @@ script:
 deploy:
   provider: releases
   api_key:
-    secure: 
+    secure: Qmgq0GUlxLDLkUbbszmVVzlj2XwYcNEslrqX+PunpfwKYpzEz7HKJpTO/Ec8YhJer/ozp5vb61vReCj5H10SDNj7yzB7LozRgIjC14SeqGaif+UFC/hNhe5EvIwLPnKgab/MhDrxR5tWyc/QhrPxndFTI4mZHkhO7qC0+TBUUD4=
   skip_cleanup: true
   file_glob: true
-  file: 
+  file: recovery.rfs
   on:
     tags: true
     all_branches: true

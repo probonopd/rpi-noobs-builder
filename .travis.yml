@@ -14,7 +14,7 @@ install:
 - git clone https://github.com/raspberrypi/noobs.git
 script:
 - export PATH=$TRAVIS_BUILD_DIR/local/usr/bin:$PATH
-- alias make='make -s'
+- sed -i -e 's|make|make -s|g' ./Makefile
 - cd noobs/
 - ./BUILDME.sh
 deploy:

@@ -25,4 +25,4 @@ cat ../recovery.rfs | lzop -d | sudo cpio -idv # Needs root here
 sed -i -e 's|recovery $RUN_INSTALLER $GPIO_TRIGGER $KEYBOARD_NO_TRIGGER $FORCE_TRIGGER $DEFAULT_KBD $DEFAULT_LANG $DEFAULT_DISPLAY $DEFAULT_PARTITION|arora|g' init
 
 # Package rootfs
-find . | sudo cpio -o -H newc | lzop -9 > ../recovery.rfs
+sudo find . | sudo cpio -o -H newc | lzop -9 > ../recovery.rfs

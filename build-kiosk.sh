@@ -22,6 +22,6 @@ cat ../recovery.rfs | lzop -d | sudo cpio -idv # Needs root here
 
 # Make changes
 # /usr/bin/arora -qws 2>/tmp/debug-qws
-sed -i -e 's|/usr/bin/recovery $RUN_INSTALLER $GPIO_TRIGGER $KEYBOARD_NO_TRIGGER $FORCE_TRIGGER $DEFAULT_KBD $DEFAULT_LANG $DEFAULT_DISPLAY $DEFAULT_PARTITION|/sbin/udhcpc eth0 ; /usr/bin/arora|g' init
+sed -i -e 's|/usr/bin/recovery $RUN_INSTALLER $GPIO_TRIGGER $KEYBOARD_NO_TRIGGER $FORCE_TRIGGER $DEFAULT_KBD $DEFAULT_LANG $DEFAULT_DISPLAY $DEFAULT_PARTITION|sleep 1 ; /sbin/udhcpc eth0 ; /usr/bin/arora|g' init
 # Package rootfs
 sudo find . | sudo cpio -o -H newc | lzop -9 > ../recovery.rfs
